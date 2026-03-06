@@ -1,0 +1,60 @@
+baseURL = 'https://gogoqaz.github.io/arxiv-digest/'
+languageCode = 'zh-tw'
+title = 'arXiv 論文日報存檔'
+theme = 'PaperMod'
+
+[params]
+  author = 'gogoqaz'
+  description = 'arXiv 量化金融與天文物理論文每日精選摘要'
+  showReadingTime = true
+  showShareButtons = false
+  showPostNavLinks = true
+  showBreadCrumbs = true
+  showCodeCopyButtons = false
+  showToc = true
+  TocOpen = false
+  defaultTheme = "auto"
+
+  [params.homeInfoParams]
+    Title = "arXiv 論文日報"
+    Content = "每日從 arXiv 精選量化金融與天文物理論文，以繁體中文撰寫全文精讀摘要"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/gogoqaz"
+
+[menu]
+  [[menu.main]]
+    identifier = "qfin"
+    name = "量化金融"
+    url = "/categories/qfin/"
+    weight = 10
+  [[menu.main]]
+    identifier = "astro"
+    name = "天文物理"
+    url = "/categories/astro/"
+    weight = 20
+  [[menu.main]]
+    identifier = "deep-dive"
+    name = "深度解讀"
+    url = "/categories/deep-dive/"
+    weight = 30
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 40
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    style = "monokai"
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
