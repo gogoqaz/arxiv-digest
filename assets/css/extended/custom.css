@@ -1,0 +1,591 @@
+/* ==========================================================================
+   arXiv 論文日報 — Scientific Editorial Theme
+   Aesthetic: Nature Briefing × The Economist science section
+   Warm paper tones, deep ink, editorial precision
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* ---------- Root Variables ---------- */
+:root {
+  --ink-deep: #1a1f36;
+  --ink-medium: #3d4463;
+  --ink-soft: #6b7394;
+  --paper-warm: #faf8f4;
+  --paper-cream: #f5f1ea;
+  --paper-highlight: #fef9e7;
+  --accent-amber: #c4973b;
+  --accent-amber-soft: rgba(196, 151, 59, 0.12);
+  --accent-teal: #2a9d8f;
+  --accent-teal-soft: rgba(42, 157, 143, 0.08);
+  --accent-coral: #e76f51;
+  --accent-coral-soft: rgba(231, 111, 81, 0.08);
+  --accent-indigo: #4361ee;
+  --accent-indigo-soft: rgba(67, 97, 238, 0.07);
+  --accent-plum: #7b2d8e;
+  --accent-plum-soft: rgba(123, 45, 142, 0.07);
+  --accent-slate: #475569;
+  --accent-slate-soft: rgba(71, 85, 105, 0.06);
+  --border-fine: rgba(26, 31, 54, 0.08);
+  --shadow-card: 0 1px 3px rgba(26, 31, 54, 0.06), 0 6px 16px rgba(26, 31, 54, 0.04);
+  --shadow-hover: 0 2px 8px rgba(26, 31, 54, 0.1), 0 12px 28px rgba(26, 31, 54, 0.06);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --font-serif: 'Noto Serif TC', 'Georgia', serif;
+  --font-sans: 'Outfit', -apple-system, sans-serif;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode overrides */
+.dark {
+  --ink-deep: #e8e6e1;
+  --ink-medium: #b8b5ad;
+  --ink-soft: #8a8780;
+  --paper-warm: #1a1d23;
+  --paper-cream: #22252d;
+  --paper-highlight: #2a2820;
+  --accent-amber: #d4a74b;
+  --accent-amber-soft: rgba(212, 167, 75, 0.15);
+  --accent-teal: #3dbdad;
+  --accent-teal-soft: rgba(61, 189, 173, 0.1);
+  --accent-coral: #f08060;
+  --accent-coral-soft: rgba(240, 128, 96, 0.1);
+  --accent-indigo: #6381f8;
+  --accent-indigo-soft: rgba(99, 129, 248, 0.1);
+  --accent-plum: #a855c8;
+  --accent-plum-soft: rgba(168, 85, 200, 0.1);
+  --accent-slate: #94a3b8;
+  --accent-slate-soft: rgba(148, 163, 184, 0.08);
+  --border-fine: rgba(232, 230, 225, 0.08);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.3), 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Base Typography ---------- */
+body {
+  font-family: var(--font-serif);
+  background: var(--paper-warm);
+  color: var(--ink-deep);
+  -webkit-font-smoothing: antialiased;
+}
+
+.post-content {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--ink-deep);
+  max-width: 740px;
+}
+
+/* ---------- Headings ---------- */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  font-family: var(--font-sans);
+  color: var(--ink-deep);
+  letter-spacing: -0.01em;
+}
+
+/* Paper title — each paper's main heading */
+.post-content h2 {
+  font-weight: 700;
+  font-size: 1.45rem;
+  margin-top: 3rem;
+  margin-bottom: 0.4rem;
+  padding: 1.2rem 1.4rem;
+  background: linear-gradient(135deg, var(--paper-cream) 0%, var(--paper-warm) 100%);
+  border: 1px solid var(--border-fine);
+  border-left: 4px solid var(--accent-amber);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  line-height: 1.4;
+  position: relative;
+  transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.post-content h2:hover {
+  box-shadow: var(--shadow-hover);
+  border-left-color: var(--accent-coral);
+}
+
+.post-content h2 a {
+  color: var(--ink-deep);
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent-amber), var(--accent-amber));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size var(--transition-smooth);
+}
+
+.post-content h2 a:hover {
+  background-size: 100% 2px;
+  color: var(--accent-amber);
+}
+
+/* Paper subtitle — the catchy Chinese subtitle */
+.post-content h2 + h3 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  margin-top: -0.2rem;
+  margin-bottom: 1rem;
+  padding-left: 1.4rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Emoji Section Headers ---------- */
+
+/* Base styling for all emoji-led h3 */
+.post-content h3 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid transparent;
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+/* 💡 Key Insight — Amber/Gold */
+.post-content h3:has(+ blockquote),
+.post-content h3[id*="一句話"] {
+  background: var(--accent-amber-soft);
+  border-left-color: var(--accent-amber);
+  color: var(--ink-deep);
+}
+
+/* 🤔 Why Important — Teal */
+.post-content h3[id*="為什麼"] {
+  background: var(--accent-teal-soft);
+  border-left-color: var(--accent-teal);
+}
+
+/* 🔬 Method — Indigo */
+.post-content h3[id*="怎麼研究"],
+.post-content h3[id*="方法"] {
+  background: var(--accent-indigo-soft);
+  border-left-color: var(--accent-indigo);
+}
+
+/* 📊 Findings — Coral */
+.post-content h3[id*="發現"] {
+  background: var(--accent-coral-soft);
+  border-left-color: var(--accent-coral);
+}
+
+/* 💼 Implications — Plum */
+.post-content h3[id*="代表什麼"],
+.post-content h3[id*="實務"] {
+  background: var(--accent-plum-soft);
+  border-left-color: var(--accent-plum);
+}
+
+/* 📖 Glossary — Slate */
+.post-content h3[id*="名詞小教室"] {
+  background: var(--accent-slate-soft);
+  border-left-color: var(--accent-slate);
+}
+
+/* ---------- Blockquotes (Key Takeaway) ---------- */
+.post-content blockquote {
+  background: linear-gradient(135deg, var(--accent-amber-soft) 0%, transparent 100%);
+  border-left: 4px solid var(--accent-amber);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.2rem 1.5rem;
+  margin: 0.8rem 0 1.5rem 0;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--ink-deep);
+  position: relative;
+  box-shadow: inset 0 0 0 1px var(--border-fine);
+}
+
+.post-content blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.15rem;
+  left: 0.6rem;
+  font-size: 3.5rem;
+  font-family: Georgia, serif;
+  color: var(--accent-amber);
+  opacity: 0.25;
+  line-height: 1;
+}
+
+.post-content blockquote p {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Tables (Glossary) ---------- */
+.post-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0 1.5rem 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  font-size: 0.95rem;
+}
+
+.post-content thead {
+  background: var(--ink-deep);
+  color: var(--paper-warm);
+}
+
+.post-content thead th {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  padding: 0.75rem 1.1rem;
+  text-align: left;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: none;
+}
+
+.post-content tbody td {
+  padding: 0.75rem 1.1rem;
+  border-bottom: 1px solid var(--border-fine);
+  vertical-align: top;
+  line-height: 1.65;
+}
+
+.post-content tbody tr {
+  background: var(--paper-warm);
+  transition: background var(--transition-smooth);
+}
+
+.post-content tbody tr:nth-child(even) {
+  background: var(--paper-cream);
+}
+
+.post-content tbody tr:hover {
+  background: var(--accent-amber-soft);
+}
+
+.post-content tbody td:first-child {
+  font-weight: 600;
+  color: var(--accent-amber);
+  white-space: nowrap;
+  font-size: 0.93rem;
+}
+
+/* ---------- Horizontal Rules (Section Dividers) ---------- */
+.post-content hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-fine) 15%,
+    var(--accent-amber) 50%,
+    var(--border-fine) 85%,
+    transparent 100%
+  );
+  margin: 2rem 0;
+  opacity: 0.6;
+}
+
+/* Decorative diamond on hr */
+.post-content hr::after {
+  content: '◆';
+  display: block;
+  text-align: center;
+  margin-top: -0.65rem;
+  font-size: 0.55rem;
+  color: var(--accent-amber);
+  opacity: 0.5;
+}
+
+/* ---------- Lists ---------- */
+.post-content ul,
+.post-content ol {
+  padding-left: 1.5rem;
+  margin: 0.6rem 0;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.post-content ol li {
+  padding-left: 0.3rem;
+}
+
+.post-content ul li::marker {
+  color: var(--accent-amber);
+}
+
+.post-content ol li::marker {
+  color: var(--accent-amber);
+  font-weight: 700;
+  font-family: var(--font-sans);
+}
+
+/* ---------- Bold & Strong Text ---------- */
+.post-content strong {
+  color: var(--accent-coral);
+  font-weight: 700;
+}
+
+/* Reset strong in table headers */
+.post-content thead strong {
+  color: inherit;
+}
+
+/* Reset strong in table first column (already styled) */
+.post-content tbody td:first-child strong {
+  color: var(--accent-amber);
+}
+
+/* ---------- Links ---------- */
+.post-content a {
+  color: var(--accent-indigo);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-smooth);
+}
+
+.post-content a:hover {
+  border-bottom-color: var(--accent-indigo);
+}
+
+/* ---------- Mailto Action Links (Deep-dive & Feedback) ---------- */
+.post-content a[href^="mailto:"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1.5px solid var(--border-fine);
+  background: var(--paper-warm);
+  color: var(--ink-medium);
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  margin: 0.15rem 0.2rem;
+}
+
+.post-content a[href^="mailto:"][href*="DEEP-DIVE"] {
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
+  background: var(--accent-amber-soft);
+}
+
+.post-content a[href^="mailto:"][href*="DEEP-DIVE"]:hover {
+  background: var(--accent-amber);
+  color: white;
+  box-shadow: 0 2px 12px rgba(196, 151, 59, 0.3);
+  transform: translateY(-1px);
+}
+
+.post-content a[href^="mailto:"][href*="UP"] {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+}
+
+.post-content a[href^="mailto:"][href*="UP"]:hover {
+  background: var(--accent-teal);
+  color: white;
+  box-shadow: 0 2px 12px rgba(42, 157, 143, 0.3);
+  transform: translateY(-1px);
+}
+
+.post-content a[href^="mailto:"][href*="DOWN"] {
+  border-color: var(--accent-coral);
+  color: var(--accent-coral);
+}
+
+.post-content a[href^="mailto:"][href*="DOWN"]:hover {
+  background: var(--accent-coral);
+  color: white;
+  box-shadow: 0 2px 12px rgba(231, 111, 81, 0.3);
+  transform: translateY(-1px);
+}
+
+/* ---------- Keywords Line ---------- */
+.post-content p:has(strong:first-child):last-of-type,
+.post-content p strong:first-child {
+  font-family: var(--font-sans);
+}
+
+/* ---------- Page Title ---------- */
+.post-title {
+  font-family: var(--font-sans) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  font-size: 2rem !important;
+  line-height: 1.25 !important;
+  color: var(--ink-deep);
+}
+
+/* ---------- Post Header Meta ---------- */
+.post-meta {
+  font-family: var(--font-sans);
+  color: var(--ink-soft);
+}
+
+/* ---------- Category & Tag Badges ---------- */
+.post-tags a,
+.terms-tags a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-radius: 100px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  transition: all var(--transition-smooth);
+}
+
+/* ---------- Table of Contents ---------- */
+.toc {
+  border: 1px solid var(--border-fine);
+  border-radius: var(--radius-md);
+  background: var(--paper-cream);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.toc a {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink-medium);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.toc a:hover {
+  color: var(--accent-amber);
+}
+
+/* ---------- Home Page Post List ---------- */
+.post-entry {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-fine);
+  transition: all var(--transition-smooth);
+  background: var(--paper-warm);
+}
+
+.post-entry:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-amber);
+  transform: translateY(-2px);
+}
+
+.post-entry .entry-header h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--ink-deep);
+}
+
+/* ---------- Intro Paragraph ---------- */
+.post-content > p:first-child {
+  font-size: 1.12rem;
+  color: var(--ink-medium);
+  font-style: italic;
+  border-bottom: 1px solid var(--border-fine);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Author & Date Line ---------- */
+.post-content p:has(strong:first-child):has(a[href*="arxiv.org"]) {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  background: var(--paper-cream);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-fine);
+  line-height: 1.6;
+}
+
+.post-content p:has(strong:first-child):has(a[href*="arxiv.org"]) strong {
+  color: var(--ink-medium);
+  font-weight: 600;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  font-family: var(--font-sans);
+}
+
+#menu a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  font-family: var(--font-sans);
+}
+
+/* ---------- Smooth Scroll & Selection ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--accent-amber-soft);
+  color: var(--ink-deep);
+}
+
+/* ---------- Responsive Fine-tuning ---------- */
+@media (max-width: 768px) {
+  .post-content h2 {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .post-content h3 {
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .post-content blockquote {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .post-content table {
+    font-size: 0.85rem;
+  }
+
+  .post-content thead th,
+  .post-content tbody td {
+    padding: 0.55rem 0.7rem;
+  }
+
+  .post-content a[href^="mailto:"] {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+  .post-content h2 {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .post-content blockquote {
+    box-shadow: none;
+  }
+
+  .post-content a[href^="mailto:"] {
+    display: none;
+  }
+}
