@@ -5,7 +5,7 @@ theme = 'PaperMod'
 
 [params]
   author = 'gogoqaz'
-  description = 'arXiv 量化金融與天文物理論文每日精選摘要'
+  description = 'arXiv 量化金融、天文物理與人工智慧論文每日精選摘要'
   showReadingTime = true
   showShareButtons = false
   showPostNavLinks = true
@@ -17,7 +17,7 @@ theme = 'PaperMod'
 
   [params.homeInfoParams]
     Title = "arXiv 論文日報"
-    Content = "每日從 arXiv 精選量化金融與天文物理論文，以繁體中文撰寫全文精讀摘要"
+    Content = "每日從 arXiv 精選量化金融、天文物理與人工智慧論文，以繁體中文撰寫全文精讀摘要"
 
   [[params.socialIcons]]
     name = "github"
@@ -35,9 +35,9 @@ theme = 'PaperMod'
     url = "/categories/astro/"
     weight = 20
   [[menu.main]]
-    identifier = "deep-dive"
-    name = "深度解讀"
-    url = "/categories/deep-dive/"
+    identifier = "csai"
+    name = "人工智慧"
+    url = "/categories/csai/"
     weight = 30
   [[menu.main]]
     identifier = "tags"
